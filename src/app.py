@@ -4,10 +4,13 @@ import os
 from dotenv import load_dotenv
 from bson import json_util
 import datetime
+from flask_cors import CORS
+
 
 
 load_dotenv()
 app = Flask(__name__)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 #Conexion a la bd de mongo
 app.config['MONGO_URI'] = os.getenv('MONGO_URI')
