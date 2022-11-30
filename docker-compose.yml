@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  monguito:
+    image: mongo
+    ports:
+      - "27017:27017"
+    env_file:
+      - ./.env
+    volumes:
+      - mongo-data:/data/db
+
+volumes: 
+  mongo-data: 
